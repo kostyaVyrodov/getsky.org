@@ -12,6 +12,7 @@ import { AdvertRow } from 'components/layout/TableAdverts';
 import { Tab, Tabs, TabList, TabPanel } from 'components/layout/Tabs';
 import Filters from './Filters';
 import media from 'media';
+import { Span } from 'components/layout/Text';
 
 import { searchAdverts, setFilters } from "./actions";
 
@@ -44,8 +45,8 @@ const BreadcrumbLabel = styled.span`
     
     &:before {
         content: '/';
-        margin-left: ${props => props.theme.spaces[1]}px;
-        margin-right: ${props => props.theme.spaces[1]}px;
+        margin-left: ${props => props.theme.space[1]}px;
+        margin-right: ${props => props.theme.space[1]}px;
     }
 `;
 
@@ -73,7 +74,7 @@ const Badge = styled.span`
     border-radius: 100%;
     background: ${props => props.theme.colors.blue};
     color: ${props => props.theme.colors.white};
-    margin-left: ${props => props.theme.spaces[4]}px;
+    margin-left: ${props => props.theme.space[4]}px;
     text-align: center;
     vertical-align: top;
 `;
@@ -121,6 +122,7 @@ class SearchAdverts extends React.Component {
                 <Container flex="1 0 auto" flexDirection="row" py={3}>
                     <BreadcrumbLink to="/">Home</BreadcrumbLink>
                     <BreadcrumbLabel>Search adverts</BreadcrumbLabel>
+                    <Span color="mint">test</Span>
                 </Container>
                 <FiltersWrapper>
                     <Container flex="1 0 auto" flexDirection="column" py={4}>

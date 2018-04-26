@@ -10,7 +10,7 @@ import { FormInput } from '../../layout/Form';
 
 const ForgotPasswordLink = styled(Link) `
     display: block;
-    margin-top: ${props => props.theme.spaces[1]}px;
+    margin-top: ${props => props.theme.space[1]}px;
     color: ${props => props.theme.colors.blue};
 
     &:hover {

@@ -43,7 +43,7 @@ const CheckBoxInput = styled.input`
 `;
 
 const Label = styled.label`
-    margin-right: ${props => props.isInline ? props.theme.spaces[1] : 0}px;
+    margin-right: ${props => props.isInline ? props.theme.space[1] : 0}px;
     font-size: 14px;
     font-family: ${props => props.theme.fontLight};
 `;

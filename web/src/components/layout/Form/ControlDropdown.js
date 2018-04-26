@@ -11,7 +11,7 @@ const SelectWrapper = styled.div`
         content: '';
         position: absolute;
         top: 50%;
-        right: ${props => props.theme.spaces[2]}px;
+        right: ${props => props.theme.space[2]}px;
         width: 0;
         height: 0;
         border-style: solid;
@@ -24,7 +24,7 @@ const SelectWrapper = styled.div`
 const Select = styled.select`
     width: 100%;
     height: ${props => props.theme.controlHeight}px;
-    padding: ${props => props.theme.spaces[0]}px ${props => props.theme.spaces[5]}px ${props => props.theme.spaces[0]}px ${props => props.theme.spaces[1]}px;
+    padding: ${props => props.theme.space[0]}px ${props => props.theme.space[5]}px ${props => props.theme.space[0]}px ${props => props.theme.space[1]}px;
     border-width: 1px;
     border-style: solid;
     border-color: ${props => getBorderColor(props)};

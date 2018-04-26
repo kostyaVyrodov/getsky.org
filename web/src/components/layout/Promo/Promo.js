@@ -49,9 +49,9 @@ const ActionText = styled.p`
 
 const Promo = styled.section`
     min-height: 400px;
-    padding-left: ${props => props.theme.spaces[5]}px;
-    padding-right: ${props => props.theme.spaces[5]}px;
-    padding-bottom: ${props => props.theme.spaces[7]}px;
+    padding-left: ${props => props.theme.space[5]}px;
+    padding-right: ${props => props.theme.space[5]}px;
+    padding-bottom: ${props => props.theme.space[7]}px;
     color: ${props => props.theme.colors.white};
     text-align: center;
     z-index: 2;

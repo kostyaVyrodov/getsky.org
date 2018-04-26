@@ -16,7 +16,7 @@ import bgImage from './intro-bg.jpg';
 const Intro = styled.div`
     background: ${props => props.theme.colors.black} url(${bgImage}) 50% 20% no-repeat;
     background-size: cover;
-    padding: ${props => props.theme.spaces[8] * 2}px 0 ${props => props.theme.introTabsHeight + props.theme.spaces[8]}px;
+    padding: ${props => props.theme.space[8] * 2}px 0 ${props => props.theme.introTabsHeight + props.theme.space[8]}px;
     color: ${props => props.theme.colors.white};
     
     h1 {

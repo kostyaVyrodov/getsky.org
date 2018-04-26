@@ -42,7 +42,7 @@ const Tab = styled(UnstyledTab) `
     strong {
         display: block;
         font-size: ${props => props.theme.fontSizes[4]}px;
-        margin-top: ${props => props.theme.spaces[0]}px;
+        margin-top: ${props => props.theme.space[0]}px;
         transform: ${props => isLeftTab(props) ? 'skew(-30deg)' : 'skew(30deg)'};
         -webkit-transform: ${props => isLeftTab(props) ? 'skew(-30deg)' : 'skew(30deg)'};
         -moz-transform: ${props => isLeftTab(props) ? 'skew(-30deg)' : 'skew(30deg)'};

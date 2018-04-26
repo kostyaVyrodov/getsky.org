@@ -1,5 +1,10 @@
 import { css } from 'styled-components';
-import { BREAKPOINTS } from 'components/config';
+
+const BREAKPOINTS = {
+    sm: 40,
+    md: 52,
+    lg: 64,
+};
 
 const media = Object.keys(BREAKPOINTS).reduce((acc, label) => {
     acc[label] = (...args) => css`

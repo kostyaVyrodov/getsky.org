@@ -25,8 +25,8 @@ const MessageInput = styled(TextArea) `
 
 const MessageInputNote = styled.p`
     font-size: ${props => props.theme.fontSizes[0]}px;
-    margin-top: ${props => props.theme.spaces[1]}px;
-    margin-bottom: ${props => props.theme.spaces[3]}px;
+    margin-top: ${props => props.theme.space[1]}px;
+    margin-bottom: ${props => props.theme.space[3]}px;
 
     color: ${props => props.theme.colors.grayBlue};
 `;
@@ -36,7 +36,7 @@ const MessageInputError = styled(MessageInputNote) `
 `;
 
 const MessagesInputFormContainer = styled.div`
-    margin-top: ${props => props.theme.spaces[3]}px;
+    margin-top: ${props => props.theme.space[3]}px;
     button {
         float: right;
     }
@@ -46,7 +46,7 @@ const MessageInputLabel = styled.p`
     color: ${props => props.theme.colors.grayBlue};
     font-size: ${props => props.theme.fontSizes[0]}px;
     margin: 0;
-    margin-bottom: ${props => props.theme.spaces[1]}px;
+    margin-bottom: ${props => props.theme.space[1]}px;
 `;
 
 const MessagesInputForm = ({ onChange, messageText, sendMessage }) => (
@@ -60,15 +60,15 @@ const MessagesInputForm = ({ onChange, messageText, sendMessage }) => (
 );
 
 const Section = styled(Flex) `
-    margin: ${props => props.theme.spaces[0]}px 0px;
+    margin: ${props => props.theme.space[0]}px 0px;
     background-color: ${props => props.theme.colors.white};
-    padding: ${props => props.theme.spaces[0]}px ${props => props.theme.spaces[1]}px;
+    padding: ${props => props.theme.space[0]}px ${props => props.theme.space[1]}px;
 `;
 const SectionPart = styled(Box) `
-    margin: ${props => props.theme.spaces[0]}px 0px;
+    margin: ${props => props.theme.space[0]}px 0px;
 
     svg {
-        margin-right: ${props => props.theme.spaces[0]}px;
+        margin-right: ${props => props.theme.space[0]}px;
     }
 `;
 
@@ -91,7 +91,7 @@ const BaseLink = styled.a`
     color: ${props => props.theme.colors.blue};
 
     svg {
-        margin-right: ${props => props.theme.spaces[1]}px;
+        margin-right: ${props => props.theme.space[1]}px;
         color: ${props => props.theme.colors.blue};
     }
 
@@ -210,8 +210,8 @@ const UsernameLabel = styled.span`
     color: ${props => props.theme.colors.grayBlue};
     font-size: ${props => props.theme.fontSizes[0]}px;
 
-    margin-top: ${props => props.theme.spaces[1]}px;
-    margin-left: ${props => props.theme.spaces[6]}px;
+    margin-top: ${props => props.theme.space[1]}px;
+    margin-left: ${props => props.theme.space[6]}px;
 `;
 
 const BaseTriangle = styled.div`
@@ -235,7 +235,7 @@ const ReverseTriangle = styled(BaseTriangle) `
 const MessageBody = styled(SectionPart) `
     background-color: ${props => props.isMyMessage ? props.theme.colors.lightGreen : props.theme.colors.lightBlue};
     font-size: ${props => props.theme.fontSizes[1]}px;
-    padding: ${props => props.theme.spaces[2]}px ${props => props.theme.spaces[3]}px;
+    padding: ${props => props.theme.space[2]}px ${props => props.theme.space[3]}px;
     margin: 0;
     margin-${ props => props.isMyMessage ? 'right' : 'left'}: ${44 + 12}px;
 `;
@@ -359,7 +359,7 @@ class MessagesContainer extends React.Component {
 
 const UserSection = styled(Section) `
     border-top: 1px solid ${props => props.theme.colors.separator};
-    padding: ${props => props.theme.spaces[4]}px 0px;
+    padding: ${props => props.theme.space[4]}px 0px;
     cursor: pointer;
     &:last-child {
         border-bottom: 1px solid ${props => props.theme.colors.separator};
