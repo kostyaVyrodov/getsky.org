@@ -14,23 +14,11 @@ const SINGLE_MODE = 'SINGLE_MODE';
 const fullWidth = { width: '100%' };
 
 class RangedSingleInput extends React.Component {
-    state = {
-        mode: RANGED_MODE,
-    }
+    componentWillMount() {
+        const { value, onChange } = this.props.input;
 
-    componentDidMount() {
-        const { value } = this.props.input;
-
-        if (value !== '') {
-            if (value.mode) {
-                this.setState({ ...this.state, mode: value.mode, });
-                return;
-            }
-            if (value.from && value.to) {
-                this.setState({ ...this.state, mode: RANGED_MODE, });
-            } else if (value.from) {
-                this.setState({ ...this.state, mode: SINGLE_MODE, });
-            }
+        if (value === '') {
+            onChange({ from: '', to: '', mode: RANGED_MODE });
         }
     }
 
@@ -38,30 +26,27 @@ class RangedSingleInput extends React.Component {
         const { input: { onChange } } = this.props;
 
         onChange({ to: '', from: '', mode });
-
-        this.setState({ ...this.state, mode });
     };
 
     onChangeFrom = e => {
         const { input: { onChange, value } } = this.props;
 
         const from = e.target.value;
-        onChange({ from, to: value.to || '', mode: this.state.mode });
+        onChange({ from, to: value.to || '', mode: value.mode });
     };
 
     onChangeTo = e => {
         const { input: { onChange, value } } = this.props;
 
         const to = e.target.value;
-        onChange({ from: value.from || '', to, mode: this.state.mode });
+        onChange({ from: value.from || '', to, mode: value.mode });
     };
 
     onChangeSingle = e => {
-        const { input: { onChange } } = this.props;
+        const { input: { onChange, value } } = this.props;
 
         const single = e.target.value;
-
-        onChange({ from: single, to: '', mode: this.state.mode });
+        onChange({ from: single, to: '', mode: value.mode });
     };
 
     render() {
@@ -71,17 +56,17 @@ class RangedSingleInput extends React.Component {
         return (
             <FormItem name={input.name} label={label} isRequired={isRequired} showError={showError} error={error}>
                 <Flex mt={2}>
-                    <Button type="button" text='Ranged amount' onClick={() => this.setMode(RANGED_MODE)} style={fullWidth} primary={this.state.mode === RANGED_MODE} />
-                    <Button type="button" text='Single amount' onClick={() => this.setMode(SINGLE_MODE)} style={fullWidth} primary={this.state.mode === SINGLE_MODE} />
+                    <Button type="button" text='Ranged amount' onClick={() => this.setMode(RANGED_MODE)} style={fullWidth} primary={input.value.mode === RANGED_MODE} />
+                    <Button type="button" text='Single amount' onClick={() => this.setMode(SINGLE_MODE)} style={fullWidth} primary={input.value.mode === SINGLE_MODE} />
                 </Flex>
-                {this.state.mode === RANGED_MODE &&
+                {input.value.mode === RANGED_MODE &&
                     <Flex mt={2} alignItems='center' >
                         <ControlInput type="number" min={min} max={max} placeholder={placeholder} error={showError} onChange={this.onChangeFrom} value={input.value.from} />
                         <Box mx={2}>to</Box>
                         <ControlInput type="number" min={min} max={max} placeholder={placeholder} error={showError} onChange={this.onChangeTo} value={input.value.to} />
                     </Flex>
                 }
-                {this.state.mode === SINGLE_MODE &&
+                {input.value.mode === SINGLE_MODE &&
                     <Flex mt={2} alignItems='center' >
                         <ControlInput type="number" min={min} max={max} placeholder={placeholder} error={showError} onChange={this.onChangeSingle} value={input.value.from} />
                     </Flex>

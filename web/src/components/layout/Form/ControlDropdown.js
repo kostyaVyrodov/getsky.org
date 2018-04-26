@@ -51,7 +51,7 @@ const ControlDropdown = ({ name, options, defaultValue, onChange, error, input, 
 
 ControlDropdown.propTypes = {
     name: PropTypes.string.isRequired,
-    defaultValue: PropTypes.string,
+    defaultValue: PropTypes.any,
     onChange: PropTypes.func.isRequired,
     options: PropTypes.arrayOf(PropTypes.shape({
         value: PropTypes.any.isRequired,
