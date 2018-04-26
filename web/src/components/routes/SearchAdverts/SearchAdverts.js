@@ -11,6 +11,7 @@ import Table from 'components/layout/Table';
 import { AdvertRow } from 'components/layout/TableAdverts';
 import { Tab, Tabs, TabList, TabPanel } from 'components/layout/Tabs';
 import Filters from './Filters';
+import media from 'media';
 
 import { searchAdverts, setFilters } from "./actions";
 
@@ -31,6 +32,10 @@ const sellAdvertsColumns = [
 const BreadcrumbLink = styled(Link) `
     font-size: 12px;
     color: ${props => props.theme.colors.grayBlue};
+    
+    ${media.sm`
+        color: red;
+    `}
 `;
 
 const BreadcrumbLabel = styled.span`

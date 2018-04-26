@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import styled from 'styled-components';
 import { Flex, Box } from 'grid-styled';
 import { Field, Fields, reduxForm, Form, formValueSelector, change } from 'redux-form';
-import { FormDropdown, FormInput, FormCheckbox, FormLabel } from '../../layout/Form';
+import { FormDropdown, FormInput, FormCheckbox, FormLabel } from 'components/layout/Form';
 import { Button } from 'components/layout/Button';
 import { ACCEPT_TRADE_OPTIONS } from 'components/layout/PostingForm';
-import { COUNTRY_HAS_STATES } from '../../../constants';
+import { COUNTRY_HAS_STATES } from 'constants';
 
 const ConnectedDropdowns = (fields) => (
     <Flex mx={-3} flexWrap="wrap">
