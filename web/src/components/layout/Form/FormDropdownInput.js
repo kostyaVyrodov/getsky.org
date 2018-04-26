@@ -18,7 +18,7 @@ class FormDropdownInput extends React.Component {
     }
 
     componentWillReceiveProps(newProps) {
-        const { input: { value, onChange } } = this.props;
+        const { input: { onChange } } = this.props;
 
         if (this.props.defaultValue.data !== newProps.defaultValue.data
             || this.props.defaultValue.prefix !== newProps.defaultValue.prefix) {

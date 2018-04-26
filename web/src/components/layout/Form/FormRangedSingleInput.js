@@ -68,7 +68,6 @@ class RangedSingleInput extends React.Component {
         const { label, placeholder, isRequired, min, max, input, meta: { error, warning, touched } } = this.props;
         const showError = !!(touched && (error || warning));
 
-
         return (
             <FormItem name={input.name} label={label} isRequired={isRequired} showError={showError} error={error}>
                 <Flex mt={2}>
@@ -77,14 +76,14 @@ class RangedSingleInput extends React.Component {
                 </Flex>
                 {this.state.mode === RANGED_MODE &&
                     <Flex mt={2} alignItems='center' >
-                        <ControlInput type="number" min={min} max={max} placeholder={placeholder} error={showError} onChange={this.onChangeFrom} value={this.props.input.value.from} />
+                        <ControlInput type="number" min={min} max={max} placeholder={placeholder} error={showError} onChange={this.onChangeFrom} value={input.value.from} />
                         <Box mx={2}>to</Box>
-                        <ControlInput type="number" min={min} max={max} placeholder={placeholder} error={showError} onChange={this.onChangeTo} value={this.props.input.value.to} />
+                        <ControlInput type="number" min={min} max={max} placeholder={placeholder} error={showError} onChange={this.onChangeTo} value={input.value.to} />
                     </Flex>
                 }
                 {this.state.mode === SINGLE_MODE &&
                     <Flex mt={2} alignItems='center' >
-                        <ControlInput type="number" min={min} max={max} placeholder={placeholder} error={showError} onChange={this.onChangeSingle} value={this.props.input.value.from} />
+                        <ControlInput type="number" min={min} max={max} placeholder={placeholder} error={showError} onChange={this.onChangeSingle} value={input.value.from} />
                     </Flex>
                 }
                 <Box mt={2}>

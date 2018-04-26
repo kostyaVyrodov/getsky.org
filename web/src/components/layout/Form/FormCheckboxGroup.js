@@ -7,12 +7,7 @@ import FormItem from 'components/layout/Form/FormItem';
 const isChecked = (values, item) => values !== '' ? values.findIndex(v => item === v) !== -1 : false;
 
 class FormCheckboxGroup extends React.Component {
-    constructor(props) {
-        super(props);
-        this.check = this.check.bind(this);
-    }
-
-    check(item) {
+    check = (item) => {
         const { input: { onChange, value } } = this.props;
 
         if (value === '') {
